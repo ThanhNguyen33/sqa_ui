@@ -11,8 +11,8 @@ const Home : Component = () => {
     })
 
     return (
-        <>
-        </>
+        <div>
+        </div>
     )
 }
 

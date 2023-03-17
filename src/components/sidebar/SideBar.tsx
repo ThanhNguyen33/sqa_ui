@@ -1,5 +1,5 @@
 import { Box, Heading, Text, VStack } from "@hope-ui/solid";
-import { Component, createEffect, JSX, splitProps } from "solid-js";
+import { Component, createEffect, JSX, Show, splitProps } from "solid-js";
 import style from "./SideBar.module.css";
 import _ from "lodash";
 
@@ -40,16 +40,9 @@ const SideBar : Component<SideBarProps> = (props) => {
     }
   ]
 
-  createEffect(() => {
-    dashBoardKey.forEach(i => {
-      console.log(_.isUndefined(i.childs));
-    });
-    
-  }, [dataStyle])
-    
     return (
         <Box className={`${dataStyle.showSideBar ? style.slide_out_animation : style.hide_sidebar} vh-100`} backgroundColor="#212e55">
-          <Box height="20vh">
+          <Box height="20vh" minHeight="100px">
             This is the side bar
           </Box>
           <VStack className="d-flex justify-content-center align-items-center">
@@ -73,15 +66,18 @@ const SideBar : Component<SideBarProps> = (props) => {
                     >
                       {item.label}
                     </Text>
-                    { 
-                      !_.isUndefined(item.childs) === false ?
-                      <i class="fa-solid fa-triangle" style={{
+                    <Show
+                      when={item.childs}
+                      fallback={<></>}
+                    >
+                      <i class="fa-solid fa-caret-down" style={{
                         color: "#a3a8c8",
-                        transform: "scale(0.8, 1.1)",
-                        "margin-left": "5px"
+                        "margin-left": "25px",
+                        "& :hover": {
+                          "color": "white"
+                        }
                       }}/>
-                      : <></>
-                    }
+                    </Show>
                   </div>
                 )
               })
