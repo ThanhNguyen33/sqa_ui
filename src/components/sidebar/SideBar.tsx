@@ -72,10 +72,7 @@ const SideBar : Component<SideBarProps> = (props) => {
                     >
                       <i class="fa-solid fa-caret-down" style={{
                         color: "#a3a8c8",
-                        "margin-left": "25px",
-                        "& :hover": {
-                          "color": "white"
-                        }
+                        "margin-left": "25px"
                       }}/>
                     </Show>
                   </div>
