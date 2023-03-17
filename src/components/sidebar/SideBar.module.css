@@ -1,0 +1,21 @@
+.slide_out_animation{
+    animation: show_sidebar 0.5s forwards ease-out;
+}
+
+.hide_sidebar{
+    display: none;
+}
+
+@keyframes show_sidebar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30%;
+    }
+}
+
+.dashboard_menu_item{
+    height: 6vh;
+    min-height: 50px;
+}
