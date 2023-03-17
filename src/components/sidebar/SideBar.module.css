@@ -15,7 +15,30 @@
     }
 }
 
+.menu_icon{
+    display: none!important;
+}
+
 .dashboard_menu_item{
-    height: 6vh;
+    height: auto;
     min-height: 50px;
+    color: #a3a8c8
+}
+
+.dashboard_menu_item:hover{
+    color: white;
+}
+
+.dashboard_menu_item:hover .menu_icon{
+    display: block!important;
+}
+
+.dashboard_menu_item_child{
+    height: 50px;
+    min-height: 50px;
+    color: #a3a8c8
+}
+
+.dashboard_menu_item_child:hover{
+    color: white;
 }
