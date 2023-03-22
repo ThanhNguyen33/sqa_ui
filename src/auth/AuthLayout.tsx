@@ -18,7 +18,11 @@ const AuthLayout: Component = () => {
     const AuthRoutes = useRoutes(routes);
 
     return(
-        <AuthRoutes />
+        <div style={{
+            "background-color": "#182346",
+        }}>
+            <AuthRoutes />
+        </div>
     )
 }
 
